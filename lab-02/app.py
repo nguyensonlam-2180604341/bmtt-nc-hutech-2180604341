@@ -17,7 +17,7 @@ def caesar_encrypt():
     key=int(request.form['inputKeyPlain'])
     Caesar=CaesarCipher ()
     encrypted_text=Caesar.encrypt_text (text, key)
-    return f"text: {text}<br/>key: (key)<br/>encrypted text: {encrypted_text}"
+    return f"text: {text}<br/>key: {key}<br/>encrypted text: {encrypted_text}"
 
 @app.route("/decrypt", methods = ['POST'])
 def caesar_decrypt():
@@ -25,7 +25,7 @@ def caesar_decrypt():
     key = int (request.form['inputKeyCipher'])
     Caesar = CaesarCipher ()
     decrypted_text = Caesar.decrypt_text (text, key)
-    return f"text: {text}<br/>key: {key}<br/>decrypted text:{decrypted_text}"
+    return f"text: {text}<br/>key: {key}<br/>decrypted text: {decrypted_text}"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5050, debug=True)
